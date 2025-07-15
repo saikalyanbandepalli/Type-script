@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var book_1 = require("./book");
+var library_1 = require("./library");
+var lib = new library_1.Library();
+var book1 = new book_1.book("Book1", "harry");
+var book2 = new book_1.book("Book2", "potter");
+var book3 = new book_1.book("Book3", "shinchan");
+lib.addBook(book1);
+lib.addBook(book2);
+lib.addBook(book3);
+console.log(lib.listBooks());
