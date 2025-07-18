@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent{
+            border: 3px solid black;
+            width: 400px;
+            margin: auto;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+        }
+ 
+        #child{
+            border: 3px solid blue;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            margin: auto;
+            margin-bottom: 18px;
+            background-color: aqua;
+        }
+ 
+ 
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div id="child">hi</div>
+        <label>Select Color:</label>
+        <input id="d5" type="text" name="myColor"><br>
+        <button type="button" onclick="applyColor()">Apply Background Color</button>
+    </div>
+ 
+    <script>
+        function applyColor(){
+            let color = document.getElementById('d5').value;
+            document.getElementById("child").style.background = color;
+        }
+ 
+    </script>
+</body>
+</html>

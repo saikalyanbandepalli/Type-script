@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+    <label>Enter Temparature</label>
+    <input type="text" name="num1" id="txt1"><br>
+     <button type="button" onclick="addition()">convert</button>
+      <strong>Result:<span id="res"> </span></strong>
+</form>
+<script>
+    function addition(){
+           
+            let Celsius = document.getElementById("txt1").value;
+            result =        (parseInt(Celsius) * 9/5) + 32
+            
+            document.getElementById("res").innerHTML=result;
+        }
+    </script>
+</body>
+</html>

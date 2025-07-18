@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="d1"></h1>
+    <h1 id="d2">Chennai</h1>
+    <h1 id="d3">India</h1>
+ 
+    <button type="button" onclick="changedata()">Button</button>
+    <button type="button" onclick="change('red')">Red</button>
+    <button type="button" onclick="change('blue')">Blue</button>
+    <button type="button" onclick="change('green')">Green</button>
+    <button type="button" onclick="change('gray')">yellow</button>
+    <hr>
+ 
+    <img id="d4" src="samosa.jfif" alt="samosa" height="200px" width="200px"><br>
+    <strong id="s">samosa</strong><br><br>
+    <button type="button" onclick="changeimg('samosa.jfif','samosa')">samosa</button>
+    <button type="button" onclick="changeimg('./idli.jfif','idli')">idli</button>
+    <button type="button" onclick="changeimg('vada.jfif','vada')">vada</button>
+    <button type="button" onclick="changeimg('./jilebi.jfif','jalebi')">jalebi</button>
+    <hr>
+
+
+
+ 
+<button type="button" onclick="previousImage()">Previous</button>
+<button type="button" onclick="nextImage()">Next</button>
+<hr>
+    <script>
+        //1.document write()
+        //document.write("hello friend <br>");
+ 
+        // //2. window.alert():
+        // window.alert("good morning all");
+ 
+        // //3.console.log():
+        // console.log("output in console");
+ 
+        
+        document.getElementById("d1").innerHTML = "Chennai"; 
+        document.getElementById("d2").style.color = "red"; 
+        let data = document.getElementById("d3").innerHTML;
+        console.log(data);
+ 
+        function changedata(){
+            document.getElementById("d2").innerHTML = "Tamil Nadu";
+        }
+ 
+        function change(color){
+            document.getElementById("d2").style.color=color;
+        }
+ 
+        function changeimg(snach,name){
+            document.getElementById("d4").src=snach;
+            document.getElementById("s").innerHTML = name;
+        }
+        const images = [
+        { src: 'samosa.jfif', name: 'samosa' },
+        { src: 'idli.jfif', name: 'idli' },
+        { src: 'vada.jfif', name: 'vada' },
+        { src: 'jilebi.jfif', name: 'jalebi' }
+             ];
+             
+    
+    let currentIndex = 0;
+    function changeimg(src, name) {
+        document.getElementById("d4").src = src;
+        document.getElementById("s").innerText = name;
+        currentIndex = images.findIndex(image => image.src === src);
+    }
+    function previousImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        changeimg(images[currentIndex].src, images[currentIndex].name);
+    }
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        changeimg(images[currentIndex].src, images[currentIndex].name);
+    }
+
+    let breakfast=["a","b","c","d"];
+    for(let i=0;i<breakfast.length;i++){
+        document.write(breakfast[i]+",");
+    }
+
+       
+    </script>
+</body>
+</html>

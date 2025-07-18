@@ -40,3 +40,4 @@ console.log(person.id)
 console.log(`id ${person.id} ${person.name} ${person.single}`);
 console.log(person.details);
 
+
